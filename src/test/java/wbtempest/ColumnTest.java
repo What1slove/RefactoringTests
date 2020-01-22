@@ -11,7 +11,7 @@ public class ColumnTest {
 
     @Before
     public void setUp() throws Exception {
-        col = new Column(1,2,3,4);
+        col = new Column(1,20,300,4000);
     }
 
     @Test
@@ -24,32 +24,32 @@ public class ColumnTest {
     @Test
     public void getFirstPointY() {
         int result =col.getFirstPointY();
-        assertEquals(result,2);
+        assertEquals(result,20);
     }
 
     @Test
     public void getSecondPointX() {
         int result =col.getSecondPointX();
-        assertEquals(result,3);
+        assertEquals(result,300);
     }
 
     @Test
     public void getSecondPointY() {
         int result =col.getSecondPointY();
-        assertEquals(result,4);
+        assertEquals(result,4000);
     }
 
     @Test
     public void getFirstPoint() {
         int[] result =col.getFirstPoint();
-        int[] expectedResult = new int[]{1,2};
+        int[] expectedResult = new int[]{1,20};
         assertArrayEquals(result,expectedResult);
     }
 
     @Test
     public void getSecondPoint() {
         int[] result =col.getSecondPoint();
-        int[] expectedResult = new int[]{3,4};
+        int[] expectedResult = new int[]{300,4000};
         assertArrayEquals(result,expectedResult);
     }
 }

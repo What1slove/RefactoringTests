@@ -7,98 +7,92 @@ import static org.junit.Assert.*;
 
 public class CoordTest {
 
+    Coord coord;
+
+    @Before
+    public void setUp() throws Exception {
+        coord = new Coord(1,20,300);
+    }
 
     @Test
     public void getX() {
-        Coord coord = new Coord(1,2,3);
         int result = coord.getX();
         assertEquals(result,1);
     }
 
     @Test
     public void getY() {
-        Coord coord = new Coord(1,2,3);
         int result = coord.getY();
-        assertEquals(result,2);
+        assertEquals(result,20);
     }
 
     @Test
     public void getZ() {
-        Coord coord = new Coord(1,2,3);
         int result = coord.getZ();
-        assertEquals(result,3);
+        assertEquals(result,300);
     }
 
     @Test
     public void setX() {
-        Coord coord = new Coord(1,2,3);
-        coord.setX(4);
+        coord.setX(4000);
         int result = coord.getX();
-        assertEquals(result,4);
+        assertEquals(result,4000);
     }
 
     @Test
     public void setY() {
-        Coord coord = new Coord(1,2,3);
-        coord.setY(4);
+        coord.setY(4000);
         int result = coord.getY();
-        assertEquals(result,4);
+        assertEquals(result,4000);
     }
 
     @Test
     public void setZ() {
-        Coord coord = new Coord(1,2,3);
-        coord.setZ(4);
+        coord.setZ(4000);
         int result = coord.getZ();
-        assertEquals(result,4);
+        assertEquals(result,4000);
     }
 
     @Test
     public void setXYZ_byInts_checkX() {
-        Coord coord = new Coord(1,2,3);
-        coord.setXYZ(4,5,6);
+        coord.setXYZ(4,50,600);
         int result = coord.getX();
         assertEquals(result,4);
     }
 
     @Test
     public void setXYZ_byInts_checkY() {
-        Coord coord = new Coord(1,2,3);
-        coord.setXYZ(4,5,6);
+        coord.setXYZ(4,50,600);
         int result = coord.getY();
-        assertEquals(result,5);
+        assertEquals(result,50);
     }
 
     @Test
     public void setXYZ_byInts_checkZ() {
-        Coord coord = new Coord(1,2,3);
-        coord.setXYZ(4,5,6);
+        coord.setXYZ(4,50,600);
         int result = coord.getZ();
-        assertEquals(result,6);
+        assertEquals(result,600);
     }
 
     @Test
     public void SetXYZ_byAnotherCoord_checkX() {
-        Coord coord = new Coord(1,2,3);
-        Coord newCoord = new Coord(4,5,6);
+        Coord newCoord = new Coord(4,50,600);
         coord.setXYZ(newCoord);
         int result = coord.getX();
         assertEquals(result,4);
     }
     @Test
     public void SetXYZ_byAnotherCoord_checkY() {
-        Coord coord = new Coord(1,2,3);
-        Coord newCoord = new Coord(4,5,6);
+        Coord newCoord = new Coord(4,50,600);
         coord.setXYZ(newCoord);
         int result = coord.getY();
-        assertEquals(result,5);
+        assertEquals(result,50);
     }
     @Test
     public void SetXYZ_byAnotherCoord_checkZ() {
-        Coord coord = new Coord(1,2,3);
-        Coord newCoord = new Coord(4,5,6);
+        Coord newCoord = new Coord(4,50,600);
         coord.setXYZ(newCoord);
         int result = coord.getZ();
-        assertEquals(result,6);
+        assertEquals(result,600);
     }
 }
